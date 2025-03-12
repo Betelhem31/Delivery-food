@@ -1,8 +1,17 @@
-import 'package:delivery_food/pages/login_page.dart';
+import 'package:delivery_food/auth/login_or_register.dart';
+import 'package:delivery_food/pages/home_page.dart';
+
+import 'package:delivery_food/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,12 +20,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: LoginPage(),
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
