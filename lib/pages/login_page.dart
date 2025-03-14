@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:delivery_food/pages/home_page.dart';
+import 'package:delivery_food/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:delivery_food/components/my_buttons.dart';
@@ -28,8 +29,9 @@ class _LoginPageState extends State<LoginPage> {
     //fill out authentication
 
     //navigate to home page
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => HomePage()),
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SettingsPage()),
     );
   }
 
@@ -72,9 +74,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(height: 10),
             MyButtons(
               text: "Sign in",
-              onTap: () {
-                login();
-              },
+              onTap: login,
             ),
 
             //not a member? register now
