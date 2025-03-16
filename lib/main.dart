@@ -1,4 +1,3 @@
-import 'package:delivery_food/auth/login_or_register.dart';
 import 'package:delivery_food/pages/home_page.dart';
 
 import 'package:delivery_food/themes/theme_provider.dart';
@@ -24,5 +23,7 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       theme: Provider.of<ThemeProvider>(context).themeData,
     );
+
+  
   }
 }
